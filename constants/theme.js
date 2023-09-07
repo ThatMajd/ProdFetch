@@ -3,17 +3,22 @@ const COLORS = {
   secondary: "#444262",
   tertiary: "#FF7754",
 
-  gray: "#83829A",
+  gray: "#8f8f8f",
   gray2: "#C1C0C8",
+  input_gray: "#efefef",
 
   white: "#F3F4F8",
   lightWhite: "#FAFAFC",
+
+  main: '#253F65',
 };
 
 const FONT = {
   regular: "DMRegular",
   medium: "DMMedium",
   bold: "DMBold",
+  roboto_black: "Roboto_Black",
+  roboto_bold: "Roboto_Bold",
 };
 
 const SIZES = {

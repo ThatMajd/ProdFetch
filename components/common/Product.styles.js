@@ -47,8 +47,26 @@ const styles = StyleSheet.create({
         textAlign: "center",
         fontSize: SIZES.large,
         fontWeight: "500",
-        margin: 25
-    }
+        margin: 10
+    },
+    logoImage: {
+        width: "50%",
+        height: "20%",
+        marginTop: 20,
+        backgroundColor: COLORS.white,
+        borderRadius: 6
+    },
+    paginationDots: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: SIZES.medium
+    },
+    dot: {
+        width: 12,
+        height: 5,
+        margin: 5,
+    },
 })
 
 export default styles;

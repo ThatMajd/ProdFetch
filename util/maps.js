@@ -1,3 +1,4 @@
+import logos from "../constants/logos";
 
 
 const hebrewToEnglishMap = {
@@ -18,3 +19,10 @@ const hebrewToEnglishMap = {
     'שם ספק': 'supplierName',
     'מס\' ספק': 'supplierNumber',
 };
+
+const brandNumLogo = {
+    "92": logos.lg,
+    "61": logos.samsung,
+}
+
+export default brandNumLogo;

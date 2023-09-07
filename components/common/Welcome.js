@@ -14,7 +14,10 @@ import {COLORS, SIZES, icons} from "../../constants";
 import {useState} from "react";
 import styles from "./Welcome.style"
 import BarcodeScannerScreen from "../../util/BarcodeScannerScreen";
-import useFetch from "../../util/useFetch";
+import FreeSearch from "../../app/query";
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+
 
 const Welcome = () => {
     const router = useRouter()
@@ -28,7 +31,6 @@ const Welcome = () => {
     };
     const handleFreeSearch = () => {
         console.log("Free Search!");
-        router.push('/query')
     }
     const handleScanBtn = () => {
         setScanBtn(true)
@@ -45,9 +47,11 @@ const Welcome = () => {
         <TouchableNativeFeedback onPress={() => {
             setScanBtn(false)
             Keyboard.dismiss()
-        }}>
-        <View style={{flex: 1}}>
-            <Text style={{textAlign: "center", fontSize: SIZES.large, fontWeight: "bold", marginTop: SIZES.large}}>
+        }}
+                                 style={{flex: 1}}
+        >
+        <View style={{flex: 1, backgroundColor: COLORS.main}}>
+            <Text style={{textAlign: "center", fontSize: SIZES.large, fontWeight: "bold", marginTop: SIZES.large, color: COLORS.lightWhite}}>
                 Find a Product
             </Text>
             <View style={styles.searchContainer}>
@@ -63,6 +67,7 @@ const Welcome = () => {
                         style={styles.searchInput}
                         value={productId}
                         onChangeText={(text) => setProductId(text)}
+                        placeholderTextColor={COLORS.gray}
                         placeholder='Insert Product ID here'
                     />
                 </View>
@@ -74,12 +79,13 @@ const Welcome = () => {
                     />
                 </TouchableOpacity>
             </View>
-            <View style={{flex: 1, alignItems: "center", marginTop: SIZES.medium}}>
-                <TouchableOpacity style={styles.freeSearchBtn} onPress={handleFreeSearch}>
-                    <Text style={{color: COLORS.lightWhite, fontSize: SIZES.xLarge}}>Free Search</Text>
-                </TouchableOpacity>
-            </View>
+            <Text style={{textAlign: "center", fontSize: SIZES.large, fontWeight: "bold", color: COLORS.lightWhite}}>
+                - or -
+            </Text>
+
+            <FreeSearch/>
             {scanBtnScanned ? <BarcodeScannerScreen onScanned={handleScanQR}/> : <View/>}
+
         </View>
         </TouchableNativeFeedback>
     );

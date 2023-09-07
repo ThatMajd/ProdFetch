@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         borderColor: 'black',
         marginRight: SIZES.small,
         marginLeft: SIZES.small,
+        marginBottom: SIZES.medium,
         borderRadius: SIZES.medium,
     },
     searchWrapper: {
@@ -43,7 +44,7 @@ const styles = StyleSheet.create({
     searchBtn: {
         width: 50,
         height: "100%",
-        backgroundColor: '#253f65',
+        backgroundColor: COLORS.main,
         borderRadius: SIZES.medium,
         justifyContent: "center",
         alignItems: "center",
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
     qrBtn: {
         width: 50,
         height: "100%",
-        backgroundColor: '#253f65',
+        backgroundColor: COLORS.main,
         borderRadius: SIZES.medium,
         justifyContent: "center",
         alignItems: "center",
